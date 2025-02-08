@@ -1,0 +1,35 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <ScrollView>
+        <StackLayout class="p-4 space-y-4" backgroundColor="#f4f4f4">
+            <Label text="Yeni Müşteri Kaydı" class="text-2xl font-bold text-center" color="#333" />
+            
+            <GridLayout rows="auto, auto" columns="*, *" class="space-y-2">
+                <Button text="Kimlik Ön Yüz" tap="{{ captureFrontId }}" 
+                    class="mx-2 h-12" backgroundColor="#4a90e2" color="white" 
+                    row="0" col="0" />
+                <Button text="Kimlik Arka Yüz" tap="{{ captureBackId }}" 
+                    class="mx-2 h-12" backgroundColor="#4a90e2" color="white" 
+                    row="0" col="1" />
+                
+                <Image src="{{ frontIdImage ? 'data:image/jpeg;base64,' + frontIdImage : '' }}" 
+                    class="h-32 mx-2 my-1" row="1" col="0" stretch="aspectFit" />
+                <Image src="{{ backIdImage ? 'data:image/jpeg;base64,' + backIdImage : '' }}" 
+                    class="h-32 mx-2 my-1" row="1" col="1" stretch="aspectFit" />
+            </GridLayout>
+
+            <StackLayout class="bg-white p-4 rounded-lg shadow-sm space-y-4">
+                <TextField hint="Ad" text="{{ firstName }}" class="input" />
+                <TextField hint="Soyad" text="{{ lastName }}" class="input" />
+                <TextField hint="Meslek" text="{{ occupation }}" class="input" />
+                <TextField hint="İşlem Tutarı" text="{{ amount }}" keyboardType="number" class="input" />
+                <TextView hint="Adres" text="{{ address }}" class="input h-32" textWrap="true" />
+                
+                <Label text="İşlem Tarihi:" class="text-sm font-medium ml-1" color="#666" />
+                <DatePicker date="{{ date }}" class="w-full" />
+            </StackLayout>
+            
+            <Button text="Kaydet" tap="{{ save }}" isEnabled="{{ canSave }}" 
+                backgroundColor="#4a90e2" color="white" class="h-12 rounded-lg" />
+        </StackLayout>
+    </ScrollView>
+</Page>

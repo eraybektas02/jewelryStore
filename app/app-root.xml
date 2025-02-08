@@ -1,0 +1,8 @@
+<TabView selectedTabTextColor="#4a90e2" androidTabsPosition="bottom">
+    <TabViewItem title="Yeni Kayıt" ios:iconSource="res://plus" android:iconSource="res://ic_menu_add">
+        <Frame defaultPage="pages/new-customer/new-customer-page" />
+    </TabViewItem>
+    <TabViewItem title="Kayıtlar" ios:iconSource="res://list" android:iconSource="res://ic_menu_view">
+        <Frame defaultPage="pages/customers/customers-page" />
+    </TabViewItem>
+</TabView>

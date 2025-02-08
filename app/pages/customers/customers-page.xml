@@ -1,0 +1,22 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo">
+    <StackLayout class="bg-gray-100">
+        <TextField hint="Müşteri Ara..." text="{{ searchQuery }}" 
+            textChange="{{ onSearchQueryChanged }}" 
+            class="input m-4" />
+        
+        <ListView items="{{ customers }}" height="100%" backgroundColor="white">
+            <ListView.itemTemplate>
+                <StackLayout class="p-4 border-b border-gray-200">
+                    <Label text="{{ firstName + ' ' + lastName }}" 
+                        class="text-lg font-bold" color="#333" />
+                    <GridLayout columns="*, auto" class="mt-1">
+                        <Label text="{{ formattedAmount }}" 
+                            class="text-sm font-medium" color="#4a90e2" col="0" />
+                        <Label text="{{ formattedDate }}" 
+                            class="text-sm" color="#666" col="1" />
+                    </GridLayout>
+                </StackLayout>
+            </ListView.itemTemplate>
+        </ListView>
+    </StackLayout>
+</Page>
