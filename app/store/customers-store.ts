@@ -44,6 +44,7 @@ class CustomersStore extends Observable {
         this.searchQuery = query;
         this.filterCustomers();
     }
+    
 
     get getFilteredCustomers() {
         return this.filteredCustomers;
