@@ -4,7 +4,7 @@
             textChange="{{ onSearchQueryChanged }}" 
             class="input m-4" />
         
-        <ListView items="{{ customers }}" height="100%" backgroundColor="white">
+        <ListView items="{{ customers }}" height="100%" backgroundColor="white" itemTap="{{ onCustomerTap }}">
             <ListView.itemTemplate>
                 <StackLayout class="p-4 border-b border-gray-200">
                     <Label text="{{ firstName + ' ' + lastName }}" 

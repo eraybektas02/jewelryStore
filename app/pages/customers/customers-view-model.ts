@@ -1,4 +1,4 @@
-import { Observable } from '@nativescript/core';
+import { Frame, Observable } from '@nativescript/core';
 import { customersStore } from '../../store/customers-store';
 import { Customer } from '../../models/customer';
 
@@ -28,5 +28,13 @@ export class CustomersViewModel extends Observable {
         const searchBar = args.object;
         customersStore.setSearchQuery(searchBar.text);
         this.notifyPropertyChange('customers', this.customers);
+    }
+
+    onCustomerTap(args: any) {
+        const customer = this.customers[args.index];
+        Frame.topmost().navigate({
+            moduleName: "pages/customer-detail/customer-detail-page",
+            context: { customerId: customer.id }
+        });
     }
 }

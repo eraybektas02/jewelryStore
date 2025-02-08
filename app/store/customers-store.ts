@@ -23,6 +23,10 @@ class CustomersStore extends Observable {
         this.filterCustomers();
     }
 
+    getCustomerById(id: string) {
+        return this.customers.find(customer => customer.id === id);
+    }
+
     filterCustomers() {
         if (this.searchQuery.trim() === '') {
             this.filteredCustomers = [...this.customers];
